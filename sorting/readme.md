@@ -60,3 +60,49 @@
 
 
 
+
+
+
+#### Penjelasan
+
+1.  Penjelasan Code
+
+```go
+// Function Membuat grapic
+func verticalBar(numbers []int){
+
+    // Mencari Maximal pada value slice untuk menentukan tinggi pertama dalam perulangan
+	max := maxIntSlice(numbers)
+
+    // Membuat perulangan mencari tinggi
+	for i := 0; i < max; i++ {
+		fmt.Println(" ")
+        // Membuat perulangan mencari lebar
+		for j := 0; j < len(numbers); j++ {
+            // menentukan Jumlah nilai yang akan di kasi ruang kosong
+			space := max - numbers[j]
+			if space > i {
+				fmt.Print(" ")
+			}else{
+				fmt.Print("|")
+			}
+			
+		}
+	}
+
+	fmt.Println(" ")
+    // Menampilkan slice number
+	for _, nums := range numbers {
+		fmt.Print(nums)
+	}
+	fmt.Println(" ")
+}
+```
+
+2.  Pada task #2 menggunakan metode Bubble sort
+3.  Pada task #3 menggunakan metode inverse Bubble sort
+4.  Untuk running program menggunakan perintah 
+
+``` bash
+go run sort.go
+```
