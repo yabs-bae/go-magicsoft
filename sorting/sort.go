@@ -94,9 +94,34 @@ func main(){
 		1, 4, 5, 6, 8, 2,
 	}
 
-	verticalBar(numbers)
-	sortDesc(numbers)
-	sortAsc(numbers)
+	var menu int;
+
+	fmt.Println("MENU")
+	fmt.Println("1. Design dan implementasikan sebuah program atau subprogram yang akan menampilan visualisasi data array sederhana dalam bentuk vertical barcharts, dan sebagai tambahan tampilkan setiap nilai data di sumbu horizontal.")
+	fmt.Println("2. Implementasikan algoritma insertion sort, dan gunakan subprogram (1) untuk memvisualisasikan setiap langkah/steps sorting")
+	fmt.Println("3. Modifikasi subprogram (2) untuk reverse sorting dan lakukan juga visualisasi dengan subprogram (1)")
+	fmt.Print("Pilih Menu : ")
+	fmt.Scan(&menu)
+
+	if menu == 1 {
+
+		verticalBar(numbers)
+
+	} else if menu == 2 {
+
+		sortDesc(numbers)
+
+	} else if menu == 3{
+
+		sortAsc(numbers)
+
+	} else {
+
+		fmt.Println("Menu tidak ditemukan")
+
+	}
+	
+	
 
 
 }

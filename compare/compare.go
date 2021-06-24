@@ -41,11 +41,11 @@ func Intersection(a, b []string) (c []string) {
 }
 
 
-
 // Function mendapatkan list directory dan file pada target folder yang diinputkan
 func getDir(dir string) ([]string, error){
 	var directory []string 
 
+	// digunakan untuk mendapatkan list folder dan file
 	err := filepath.Walk(dir,
 	func (path string, info os.FileInfo, err error) error {
 			if err != nil {
@@ -53,10 +53,9 @@ func getDir(dir string) ([]string, error){
 			}
 
 			pathreplace := strings.Replace(dir,"./","",-1)
+			// membuat list directory dan file
 			directory = append(directory, strings.Replace(path,pathreplace,"",-1))
-
 			return nil
-
 	})
 
 
@@ -65,7 +64,6 @@ func getDir(dir string) ([]string, error){
 	}
 
 	return directory, nil
-
 }
 
 
@@ -153,11 +151,36 @@ func main() {
 	2. Jika file ada di source tapi tidak ada di target berikan keterangan **NEW**
 	3. Jika file tidak ada di source tapi ada di target berikan keterangan **DELETED**
 	*/
-	compare("./source/","./target/")	
-	fmt.Println("=================================")
+	
 	/**
 	TASK #2. Modifikasi program #1 untuk compare file content untuk rule (1), jika ada perbedaan beri keterangan MODIFIED
 	*/
-	compare_2("./source/","./target/")	
+	
+	
+	var menu int;
+
+	fmt.Println("MENU")
+	fmt.Println("TASK #1. Implementasikan sebuah *program* yang membandingkan isi dari dua direktori melalui *parameter*.")
+	fmt.Println("	- Jika file ada di source dan target, abaikan")
+	fmt.Println("	- Jika file ada di source tapi tidak ada di target berikan keterangan **NEW**")
+	fmt.Println("	- Jika file tidak ada di source tapi ada di target berikan keterangan **DELETED**")
+	fmt.Println("TASK #2. Modifikasi program #1 untuk compare file content untuk rule (1), jika ada perbedaan beri keterangan MODIFIED")
+	
+	fmt.Print("Pilih Menu : ")
+	fmt.Scan(&menu)
+
+	if menu == 1 {
+
+		compare("./source/","./target/")	
+
+	} else if menu == 2 {
+
+		compare_2("./source/","./target/")
+
+	} else {
+
+		fmt.Println("Menu tidak ditemukan")
+
+	}
 
 }
