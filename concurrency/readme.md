@@ -19,3 +19,8 @@ ilustrasi:
 grab -concurrent_limit=2 -output=/home/yourname/museum 
 ```
 
+#### Untuk menjalankan program
+
+```bash
+go run concurrency.go
+```
