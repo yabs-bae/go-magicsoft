@@ -24,3 +24,7 @@ grab -concurrent_limit=2 -output=/home/yourname/museum
 ```bash
 go run concurrency.go
 ```
+
+Alasan implementasi code adalah referensi dari link berikut :
+[Worker and Queue](http://www.inanzzz.com/index.php/post/3hut/a-simple-worker-and-work-queue-example-with-golang)
+[Export CSV](https://webdamn.com/write-data-to-csv-file-using-golang/)
