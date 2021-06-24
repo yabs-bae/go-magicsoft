@@ -55,3 +55,10 @@ folder2/file022.txt NEW
 ```
 
 TASK #2. Modifikasi program #1 untuk *compare* file content untuk rule (1), jika ada perbedaan beri keterangan **MODIFIED** 
+
+
+#### Untuk menjalankan program
+
+```bash
+go run compare.go
+```
